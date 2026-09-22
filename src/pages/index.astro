@@ -1,0 +1,179 @@
+---
+import Base from '../layouts/Base.astro';
+import Accordion from '../components/Accordion.astro';
+import '../styles/home.css';
+
+const projects = [
+  { href: '/botik', name: 'Botik', meta: 'Brand, web & marketing systems', status: 'Ongoing' },
+  { href: '/sheldcube', name: 'sheldCUBE', meta: 'UX audit & design system', status: 'Delivered' },
+  { href: '/olly', name: 'Olly Teraseprofiilid', meta: 'Brand alignment & print system', status: 'Ongoing' },
+];
+
+const principles = [
+  {
+    title: 'Optimisation with AI',
+    paragraphs: [
+      'Always human-first. AI accelerates execution, but design decisions are rooted in human empathy, research, and intuition.',
+    ],
+  },
+  {
+    title: 'Clear communication',
+    paragraphs: [
+      'Rapid email response times. I intentionally limit client load so urgent changes, feedback, and updates are addressed without delay.',
+    ],
+  },
+  {
+    title: 'Long-term commitment',
+    paragraphs: [
+      'Support extends past handoff. If something is confusing post-launch, it means I didn’t explain it clearly enough — it’s my priority to help you understand or adjust it.',
+    ],
+  },
+  {
+    title: 'Client understanding',
+    paragraphs: [
+      'Priority is ensuring clients understand the “why” behind design choices. When you understand the rationale, implementation and acceptance become seamless.',
+    ],
+  },
+];
+
+const education = [
+  { status: 'In progress', title: 'BA Digital Product Design', sub: 'Estonian Academy of Arts (EKA), Tallinn' },
+  { status: 'Completed', title: 'Exchange semester', sub: 'University of Porto, Portugal' },
+];
+
+const experience = [
+  { status: 'Ongoing', title: 'Creative director & marketing specialist', sub: 'Botik — event venue & garden bar, Tallinn' },
+  { status: 'Ongoing', title: 'Freelance designer', sub: 'Clients including sheldCUBE and Olly Teraseprofiilid' },
+];
+
+const skills = [
+  'Brand & identity',
+  'Design systems',
+  'Web & digital product',
+  'Marketing & social',
+  'SEO & performance ads',
+  'AI-assisted workflows',
+];
+---
+
+<Base
+  title="KUIA — Kairiin, freelance designer, Tallinn"
+  description="KUIA is the freelance design practice of Kairiin — brand, design systems, and digital work for clients in Estonia and beyond."
+>
+  <main id="main">
+    <!-- Hero -->
+    <section class="wrap hero">
+      <p class="label hero-label">Freelance designer — brand, product, digital — Tallinn, Estonia</p>
+
+      <h1 class="display hero-title">
+        I don’t have<br />one job title.
+      </h1>
+
+      <div class="hero-foot">
+        <p class="lead hero-sub">
+          So I collect clients instead — different fields, same hands. Brand systems, digital
+          product, and the marketing that carries them.
+        </p>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section id="work" class="wrap section rule-ink">
+      <div class="section-head">
+        <p class="label">01 — Work</p>
+        <h2>Selected projects</h2>
+        <p class="section-head-aside label">Three of three</p>
+      </div>
+
+      <div class="index-list">
+        {projects.map((project, i) => (
+          <a class="index-row" href={project.href}>
+            <span class="index-num">/{String(i + 1).padStart(2, '0')}</span>
+            <span class="index-name">{project.name}</span>
+            <span class="index-meta">{project.meta}</span>
+            <span class="index-year">{project.status}</span>
+            <span class="index-arrow" aria-hidden="true">↗</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Approach -->
+    <section id="approach" class="wrap section rule-ink">
+      <div class="section-head">
+        <p class="label">02 — Approach</p>
+        <h2>Principles, not a pitch deck</h2>
+      </div>
+
+      <Accordion items={principles} />
+    </section>
+
+    <!-- About -->
+    <section id="about" class="wrap section rule-ink">
+      <div class="section-head">
+        <p class="label">03 — About</p>
+        <h2>The person behind it</h2>
+      </div>
+
+      <div class="grid">
+        <p class="label about-label">Statement</p>
+        <div class="about-body">
+          <p>
+            I’m a freelance designer, trained in digital product design at the Estonian Academy of
+            Arts — though that title undersells it. I collect clients instead of settling on one job
+            title, because I’m a people person first and I’d rather work across a lot of different
+            fields than commit to one lane. It also means every project mixes what I already know
+            with something I don’t yet, which is the part that keeps it interesting.
+          </p>
+          <p>
+            I’ve trained myself in AI tools to make my process simpler — less time and money spent
+            for the client. But the people on the other end of what I design are still human, and I
+            think a human hand in making it stays necessary. It’s where the usability and the trust
+            actually come from.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CV -->
+    <section id="cv" class="wrap section rule-ink">
+      <div class="section-head">
+        <p class="label">04 — Background</p>
+        <h2>Where I’ve been</h2>
+      </div>
+
+      <div class="cv-group">
+        <p class="label">Education</p>
+        <div class="cv-list">
+          {education.map((item) => (
+            <div class="cv-row">
+              <span class="cv-status">{item.status}</span>
+              <span class="cv-title">{item.title}</span>
+              <span class="cv-sub">{item.sub}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="cv-group">
+        <p class="label">Experience</p>
+        <div class="cv-list">
+          {experience.map((item) => (
+            <div class="cv-row">
+              <span class="cv-status">{item.status}</span>
+              <span class="cv-title">{item.title}</span>
+              <span class="cv-sub">{item.sub}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="cv-group">
+        <p class="label">Capabilities</p>
+        <ul class="tag-list">
+          {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
+      </div>
+    </section>
+  </main>
+</Base>

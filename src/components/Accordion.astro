@@ -1,0 +1,36 @@
+---
+// items: [{ title, paragraphs?: string[], items?: string[] }]
+// Strings may carry inline HTML (e.g. <strong>), so they render with set:html.
+const { items, startOpen = 0 } = Astro.props;
+---
+
+<div class="accordion">
+  {items.map((item, index) => (
+    <div class:list={['accordion-item', { 'is-open': index === startOpen }]}>
+      <button
+        class="accordion-trigger"
+        type="button"
+        aria-expanded={index === startOpen ? 'true' : 'false'}
+      >
+        <span class="accordion-num">{String(index + 1).padStart(2, '0')}</span>
+        <span class="accordion-title">{item.title}</span>
+        <span class="accordion-icon" aria-hidden="true">↓</span>
+      </button>
+
+      <div class="accordion-panel">
+        <div>
+          <div class="accordion-body">
+            <div>
+              {item.paragraphs?.map((text) => <p set:html={text} />)}
+              {item.items && (
+                <ul>
+                  {item.items.map((entry) => <li set:html={entry} />)}
+                </ul>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>

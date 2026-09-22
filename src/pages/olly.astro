@@ -1,0 +1,102 @@
+---
+import CaseLayout from '../layouts/CaseLayout.astro';
+import Accordion from '../components/Accordion.astro';
+
+const meta = [
+  { label: 'Client', value: 'Olly Teraseprofiilid — Estonian steel profile manufacturer' },
+  { label: 'Role', value: 'Brand designer & graphic designer' },
+  { label: 'Timeline', value: 'Ongoing' },
+  { label: 'Tools', value: 'Figma, Canva' },
+  { label: 'Deliverables', value: 'Corporate visual identity (CVI), production-ready print logo, custom icon set, B2B document assets, social & poster templates' },
+  { label: 'Status', value: 'Active development' },
+];
+
+const intro = [
+  'Olly Teraseprofiilid is a well-established Estonian steel profile manufacturer. After recently launching a new website, they needed their social media presence, print collateral, and operational touchpoints to reflect the same level of quality and trust.',
+  'I was brought on to bridge the web and offline brand experience: refining their legacy logo for print production, building a cohesive design system in Figma, and creating reusable Canva templates across social media, marketing posters, and B2B communications.',
+];
+
+const execution = [
+  {
+    title: 'Logo refinement & production preparation',
+    items: [
+      '<strong>Vector optimisation:</strong> prepared the legacy logo for print — CMYK conversions, scalable formats, print-safe margins.',
+      '<strong>Logo variations:</strong> expanded a single black asset into light and dark print-ready files for industrial use.',
+    ],
+  },
+  {
+    title: 'Design system & palette evolution',
+    items: [
+      '<strong>Web to social:</strong> built a matching design system in Figma from the new site’s layout rules.',
+      '<strong>Strategic colour accents:</strong> kept the all-black foundation for heritage recognition, adding trust-building accents to stand out from monochrome competitors.',
+      '<strong>Custom iconography:</strong> a dedicated icon set for steel profiles and technical specs.',
+    ],
+  },
+  {
+    title: 'B2B operational & marketing assets',
+    items: [
+      '<strong>Digital & print collateral:</strong> marketing posters, social campaign templates, and promotional graphics.',
+      '<strong>Operational assets:</strong> email footers and header/footer templates for PDF invoices and quotes.',
+      '<strong>Canva handoff:</strong> core layouts ported into Canva so the team can produce graphics independently.',
+    ],
+  },
+];
+---
+
+<CaseLayout
+  title="Olly Teraseprofiilid — KUIA"
+  description="Olly Teraseprofiilid — brand alignment, print preparation, and visual system by KUIA / Kairiin."
+  name="Olly Teraseprofiilid"
+  index="/03"
+  hook="When everyone in the industry wears black, standing out means adding colour without losing who you are."
+  discipline="Brand alignment, print preparation & visual system"
+  meta={meta}
+  intro={intro}
+  mediaNote="Placeholder — print collateral and brand assets"
+  next={{ href: '/botik', label: 'Botik' }}
+>
+  <section class="wrap section grid rule">
+    <p class="label case-prose-label">Challenge</p>
+    <div class="case-prose">
+      <h3>01 — Brand alignment across touchpoints</h3>
+      <p>
+        The company needed their social channels, marketing, and transactional collateral — invoices,
+        email signatures — to look as modern and high-quality as their new website.
+      </p>
+
+      <h3>02 — Legacy heritage vs. modern differentiation</h3>
+      <p>
+        Their existing visual identity was strictly all-black. While black felt premium, many
+        industrial competitors used identical monochrome schemes. The goal was to preserve brand
+        recognition for long-time clients while introducing subtle accent colours to stand out and
+        modernise the look.
+      </p>
+
+      <h3>03 — Vector & print asset optimisation</h3>
+      <p>
+        The original logo existed only as a flat black SVG file. It was not optimised for physical
+        print production — large-format signage, steel profile labelling, print materials — or for
+        varied background contexts.
+      </p>
+    </div>
+  </section>
+
+  <section class="wrap section rule">
+    <div class="section-head">
+      <p class="label">Execution</p>
+      <h2>Design system</h2>
+    </div>
+    <Accordion items={execution} />
+  </section>
+
+  <section class="wrap section grid rule">
+    <p class="label case-prose-label">Outcome</p>
+    <div class="case-prose">
+      <ul>
+        <li><strong>Unified brand experience:</strong> connected web design, social channels, print posters, and everyday customer invoicing under one cohesive identity.</li>
+        <li><strong>Market differentiation:</strong> elevated the visual perception of an established B2B manufacturer against monochrome competitors.</li>
+        <li><strong>Production efficiency:</strong> print-ready vector files and easy-to-use Canva templates, eliminating future production bottlenecks.</li>
+      </ul>
+    </div>
+  </section>
+</CaseLayout>

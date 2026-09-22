@@ -1,0 +1,67 @@
+---
+import Base from './Base.astro';
+import '../styles/case.css';
+
+const {
+  title,
+  description,
+  name,
+  index,
+  hook,
+  discipline,
+  meta,
+  intro,
+  mediaNote,
+  next,
+} = Astro.props;
+---
+
+<Base title={title} description={description}>
+  <main id="main">
+    <section class="wrap case-head">
+      <a class="case-back" href="/#work">← Index</a>
+
+      <p class="label" style="margin-top: 28px;">{index} — Case study</p>
+      <h1 class="display case-title">{name}</h1>
+
+      <div class="case-subhead-row">
+        <p class="case-discipline">{discipline}</p>
+        <p class="case-hook">{hook}</p>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="media" role="img" aria-label={`Placeholder image for ${name}`}>
+        <span class="media-note">{mediaNote}</span>
+      </div>
+    </section>
+
+    <section class="wrap section grid case-cols">
+      <p class="label">Overview</p>
+      <div class="case-col-main">
+        {intro.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+      <div class="case-col-side">
+        <dl class="spec">
+          {meta.map((entry) => (
+            <div class="spec-row">
+              <dt>{entry.label}</dt>
+              <dd>{entry.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
+
+    <slot />
+
+    {next && (
+      <div class="wrap case-next">
+        <a href={next.href}>
+          <p class="label">Next project</p>
+          <span class="case-next-name">{next.label} →</span>
+        </a>
+      </div>
+    )}
+  </main>
+</Base>

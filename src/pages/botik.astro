@@ -1,0 +1,100 @@
+---
+import CaseLayout from '../layouts/CaseLayout.astro';
+import Accordion from '../components/Accordion.astro';
+
+const meta = [
+  { label: 'Client', value: 'Botik — event venue, bar & community space, Tallinn' },
+  { label: 'Role', value: 'Lead product & brand designer, growth strategist, content creator' },
+  { label: 'Timeline', value: 'Ongoing' },
+  { label: 'Tools', value: 'Voog CMS, Figma, Canva, Meta Ads Manager, Claude (custom brand AI), scheduling automation' },
+  { label: 'Deliverables', value: 'Brand CVI documentation, Voog web optimisation & SEO, dedicated B2B event section, Meta ad campaigns, automated AI content system' },
+  { label: 'Status', value: 'Active / live systems' },
+];
+
+const intro = [
+  'Botik is an event venue, bar, and community space based in Tallinn. With creative freedom from the client, I took an end-to-end approach to elevating Botik’s digital presence — combining web design improvements on the Voog platform, B2B positioning for corporate events, hands-on growth marketing, and an AI-driven content automation pipeline.',
+];
+
+const execution = [
+  {
+    title: 'Brand system mapping & CVI documentation',
+    items: [
+      'Mapped Botik’s informal brand elements into a structured brand guidelines (CVI) document.',
+      'Modernised typography and asset usage while preserving Botik’s organic, community feel.',
+    ],
+  },
+  {
+    title: 'Voog web enhancement & B2B event hub',
+    items: [
+      '<strong>Business event section:</strong> a new section showcasing venue rental options, layouts, and inquiry forms for corporate clients.',
+      '<strong>SEO:</strong> cleaned up site architecture, metadata, and keywords to boost search visibility for venue rentals in Tallinn.',
+      '<strong>UI:</strong> streamlined layouts and fixed navigation friction on desktop and mobile.',
+    ],
+  },
+  {
+    title: 'AI-powered marketing automation & growth',
+    items: [
+      '<strong>Custom Claude AI setup:</strong> a project environment loaded with Botik’s brand voice and templates, generating on-brand social copy and event descriptions.',
+      '<strong>Streamlined publishing:</strong> AI-generated copy and Canva templates feed into scheduling tools with minimal manual effort.',
+      '<strong>Performance marketing:</strong> Meta ad campaigns and local SEO driving direct venue inquiries.',
+    ],
+  },
+];
+---
+
+<CaseLayout
+  title="Botik — KUIA"
+  description="Botik — web enhancement, marketing strategy, and AI workflow automation by KUIA / Kairiin."
+  name="Botik"
+  index="/01"
+  hook="A venue can’t feel premium to corporate clients if its website still reads like a daily bar."
+  discipline="Web enhancement, marketing strategy & AI workflow automation"
+  meta={meta}
+  intro={intro}
+  mediaNote="Placeholder — venue and campaign photography"
+  next={{ href: '/sheldcube', label: 'sheldCUBE' }}
+>
+  <section class="wrap section grid rule">
+    <p class="label case-prose-label">Challenge</p>
+    <div class="case-prose">
+      <h3>01 — Positioning shift, daily bar to event venue</h3>
+      <p>
+        Botik needed to communicate its transition into a dedicated event space. The existing
+        digital touchpoints didn’t clearly highlight venue rental options for business events and
+        private functions.
+      </p>
+
+      <h3>02 — Platform constraints & web modernisation</h3>
+      <p>
+        The website was hosted on Voog CMS, which had design and layout limitations. The structure
+        needed modernisation, improved micro-copy, and technical SEO fixes to attract organic
+        inquiries within platform boundaries.
+      </p>
+
+      <h3>03 — Scaling content production & marketing efficiency</h3>
+      <p>
+        Managing ongoing social media, Meta ad campaigns, and seasonal promotions required a lean,
+        sustainable workflow that didn’t sacrifice visual quality or brand voice.
+      </p>
+    </div>
+  </section>
+
+  <section class="wrap section rule">
+    <div class="section-head">
+      <p class="label">Execution</p>
+      <h2>Key solutions</h2>
+    </div>
+    <Accordion items={execution} />
+  </section>
+
+  <section class="wrap section grid rule">
+    <p class="label case-prose-label">Outcome</p>
+    <div class="case-prose">
+      <ul>
+        <li><strong>Automated workflow:</strong> reduced weekly content creation time significantly by building an AI-assisted pipeline for copywriting and template generation.</li>
+        <li><strong>B2B revenue stream:</strong> improved venue visibility and lead conversion for corporate and private events through the dedicated web section.</li>
+        <li><strong>Expanded skillset:</strong> hands-on expertise in technical SEO, Meta ads targeting, and prompt engineering / AI workflow optimisation.</li>
+      </ul>
+    </div>
+  </section>
+</CaseLayout>

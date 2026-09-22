@@ -1,0 +1,60 @@
+---
+const year = new Date().getFullYear();
+const email = 'hello@kairiin.design';
+
+const sitemap = [
+  { href: '/', label: 'Index' },
+  { href: '/#work', label: 'Work' },
+  { href: '/#about', label: 'About' },
+  { href: '/#cv', label: 'CV' },
+];
+
+const projects = [
+  { href: '/botik', label: 'Botik' },
+  { href: '/sheldcube', label: 'sheldCUBE' },
+  { href: '/olly', label: 'Olly Teraseprofiilid' },
+];
+
+const social = [
+  { href: '#', label: 'LinkedIn' },
+  { href: '#', label: 'Instagram' },
+];
+---
+
+<footer class="site-footer" id="contact">
+  <div class="wrap">
+    <div class="grid footer-grid">
+      <div class="footer-col">
+        <p class="label footer-col-label">Sitemap</p>
+        <ul class="footer-list">
+          {sitemap.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <p class="label footer-col-label">Selected work</p>
+        <ul class="footer-list">
+          {projects.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+        </ul>
+      </div>
+
+      <div class="footer-col-narrow">
+        <p class="label footer-col-label">Elsewhere</p>
+        <ul class="footer-list">
+          {social.map((item) => <li><a href={item.href}>{item.label} ↗</a></li>)}
+        </ul>
+      </div>
+
+      <div class="footer-col-wide">
+        <p class="label footer-col-label">Have a project in mind?</p>
+        <a class="footer-email" href={`mailto:${email}`}>{email}</a>
+      </div>
+    </div>
+
+    <div class="footer-base">
+      <span>KUIA — Kairiin</span>
+      <span>Freelance design, Tallinn</span>
+      <span>© {year}</span>
+    </div>
+  </div>
+</footer>

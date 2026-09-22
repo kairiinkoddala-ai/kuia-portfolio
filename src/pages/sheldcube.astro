@@ -1,0 +1,111 @@
+---
+import CaseLayout from '../layouts/CaseLayout.astro';
+import Accordion from '../components/Accordion.astro';
+
+const meta = [
+  { label: 'Client', value: 'sheldCUBE — modular steel cubes (founder: Kristofer Paade)' },
+  { label: 'Role', value: 'Solo UX/UI designer, brand & graphic designer, copywriter' },
+  { label: 'Timeline', value: 'Short-term sprint' },
+  { label: 'Tools', value: 'Figma, Canva' },
+  { label: 'Deliverables', value: 'Figma audit & developer handoff file, component design system, visual identity (CVI) & marketing templates, UX copy enhancements' },
+  { label: 'Status', value: 'Live web implementation & active social brand system' },
+];
+
+const intro = [
+  'sheldCUBE manufactures premium modular steel cubes for outdoor and garden spaces. While their website was functional, it lacked a scalable design foundation and contained layout bugs that degraded the shopping experience.',
+  'I was brought on as a freelance product designer to conduct a thorough UX/UI audit, resolve critical product display issues, establish a developer-friendly design system, and create a brand identity with reusable templates to drive marketing trust.',
+];
+
+const process = [
+  {
+    title: 'UX/UI health check & structural audit',
+    items: [
+      '<strong>Annotated screen captures:</strong> every problematic area across all pages, visually tagged.',
+      '<strong>Problem categorisation:</strong> issues tagged by type (UI, UX, copy, layout bug) with concrete fixes.',
+    ],
+  },
+  {
+    title: 'Building the Figma design system',
+    items: [
+      '<strong>Global tokens:</strong> standardised colours, type scale, spacing, icons, and corner radii.',
+      '<strong>Component library:</strong> redesigned navigation, buttons, form inputs, and product cards.',
+      '<strong>Product card redesign:</strong> sale tags and varying content no longer break row alignment.',
+    ],
+  },
+  {
+    title: 'Developer handoff',
+    paragraphs: [
+      'Organised the Figma file into a clean, developer-ready blueprint together with the developer — explicit UX notes plus component variants, so fixes could ship without guesswork.',
+    ],
+  },
+  {
+    title: 'CVI & scalable brand assets',
+    items: [
+      'Ready-to-use social and marketing layouts matching the brand identity.',
+      'The founder can now produce high-quality content independently.',
+    ],
+  },
+];
+---
+
+<CaseLayout
+  title="sheldCUBE — KUIA"
+  description="sheldCUBE — scalable design system and UX audit for modular steel cubes, by KUIA / Kairiin."
+  name="sheldCUBE"
+  index="/02"
+  hook="A high-quality product needs a high-quality visual system, or the website undersells it before anyone reads a spec."
+  discipline="Scalable design system & UX audit for modular steel cubes"
+  meta={meta}
+  intro={intro}
+  mediaNote="Placeholder — before / after interface screens"
+  next={{ href: '/olly', label: 'Olly Teraseprofiilid' }}
+>
+  <section class="wrap section grid rule">
+    <p class="label case-prose-label">Challenge</p>
+    <div class="case-prose">
+      <p>
+        As a growing startup, sheldCUBE needed a digital presence that could scale smoothly without
+        requiring a complete redesign every time a new product or page was added.
+      </p>
+
+      <h3>Key friction points</h3>
+      <ul>
+        <li><strong>Broken product comparison:</strong> cards spanned more than a screen, and sale badges broke row alignment entirely.</li>
+        <li><strong>Missing page architecture:</strong> all products lived on the home page — no dedicated pages, limiting SEO and exploration.</li>
+        <li><strong>Lack of design standards:</strong> non-standardised margins, fonts, and colours made development unpredictable.</li>
+        <li><strong>Visual credibility gap:</strong> a high-end physical product needs visual authority the brand didn’t yet have.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap section rule">
+    <div class="section-head">
+      <p class="label">Process</p>
+      <h2>The solution</h2>
+    </div>
+    <Accordion items={process} />
+  </section>
+
+  <section class="wrap section grid rule">
+    <p class="label case-prose-label">Outcome</p>
+    <div class="case-prose">
+      <ul>
+        <li><strong>Live system:</strong> site updates successfully handed off and implemented by the developer.</li>
+        <li><strong>Scalable foundation:</strong> new pages and product additions can now be built seamlessly using the unified design system.</li>
+        <li><strong>Marketing autonomy:</strong> the brand actively uses the Canva CVI templates across its official social media channels.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap section grid rule">
+    <p class="label case-prose-label">Client</p>
+    <blockquote class="case-quote">
+      <p>
+        “I am very satisfied, I learned a lot myself, and the developer is happy to start
+        implementing. I really liked your proposals… I am very grateful to you for our cooperation
+        so far and hopefully in the future as well.”
+      </p>
+      <cite>Kristofer Paade — Founder, sheldCUBE</cite>
+    </blockquote>
+  </section>
+</CaseLayout>
